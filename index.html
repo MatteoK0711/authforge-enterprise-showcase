@@ -1,191 +1,987 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+
+
+    <meta
+
+        name="viewport"
+
+        content="width=device-width, initial-scale=1.0"
+
+    >
+
+
+
+    <meta
+
+        name="description"
+
+        content="AuthForge Neo — Futuristic authentication UI kit built with HTML, CSS and vanilla JavaScript."
+
+    >
+
+
+
+    <title>AuthForge Neo | Authentication UI Kit</title>
+    <link rel="stylesheet" href="css/showcase.css">
+</head>
+
+
+
+<body class="neo-home">
+
+
+
+
+
+<!-- =====================================================
+
+     NAVIGATION
+
+\====================================================== -->
+
+
+
+<header class="neo-nav">
+
+
+
+    <a href="index.html" class="neo-nav-brand">
+
+
+
+        <span class="neo-nav-logo">
+
+            N
+
+        </span>
+
+
+
+        <div>
+
+            <strong>AuthForge</strong>
+
+            <span>NEO</span>
+
+        </div>
+
+
+
+    </a>
+
+
+
+
+
+    <nav class="neo-nav-links">
+
+
+
+        <a href="#system">
+
+            System
+
+        </a>
+
+
+
+        <a href="#screens">
+
+            Screens
+
+        </a>
+
+
+
+        <a href="#technology">
+
+            Technology
+
+        </a>
+
+
+
+
+
+        <div class="theme-controls">
+
+
+
+            <div class="accent-picker">
+
+
+
+                <button
+
+                    class="accent-trigger"
+
+                    id="accentTrigger"
+
+                    type="button"
+
+                    aria-label="Change accent color"
+
+                >
+
+                    <span class="accent-current"></span>
+
+                </button>
+
+
+
+                <div
+
+                    id="accentMenu"
+
+                    class="accent-menu hidden"
+
+                >
+
+
+
+                    <button type="button" data-accent-option="indigo">
+
+                        <span class="accent-dot accent-indigo"></span>
+
+                    </button>
+
+
+
+                    <button type="button" data-accent-option="blue">
+
+                        <span class="accent-dot accent-blue"></span>
+
+                    </button>
+
+
+
+                    <button type="button" data-accent-option="emerald">
+
+                        <span class="accent-dot accent-emerald"></span>
+
+                    </button>
+
+
+
+                    <button type="button" data-accent-option="rose">
+
+                        <span class="accent-dot accent-rose"></span>
+
+                    </button>
+
+
+
+                    <button type="button" data-accent-option="orange">
+
+                        <span class="accent-dot accent-orange"></span>
+
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <button
+
+                id="themeToggle"
+
+                class="theme-toggle"
+
+                type="button"
+
+                aria-label="Toggle theme"
+
+            >
+
+
+
+                <svg
+
+                    class="theme-sun"
+
+                    viewBox="0 0 24 24"
+
+                    fill="none"
+
+                    stroke="currentColor"
+
+                >
+
+                    <circle cx="12" cy="12" r="4" stroke-width="1.7"/>
+
+                    <path
+
+                        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"
+
+                        stroke-width="1.7"
+
+                    />
+
+                </svg>
+
+
+
+                <svg
+
+                    class="theme-moon"
+
+                    viewBox="0 0 24 24"
+
+                    fill="none"
+
+                    stroke="currentColor"
+
+                >
+
+                    <path
+
+                        d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"
+
+                        stroke-width="1.7"
+
+                    />
+
+                </svg>
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+
+
+        <a
+
+            href="https://kutnjak6.gumroad.com/l/sudfp/" target="_blank" rel="noopener noreferrer"
+
+            class="neo-nav-cta"
+
+        >
+
+            Get NEO
+
+            <span>↗</span>
+
+        </a>
+
+
+
+    </nav>
+
+
+
+</header>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+
+<!-- =====================================================
+
+     HERO
+
+\====================================================== -->
+
+
+
 <section class="neo-hero">
+
+
 
     <div class="neo-home-grid"></div>
 
+
+
     <div class="neo-hero-beam neo-beam-one"></div>
+
     <div class="neo-hero-beam neo-beam-two"></div>
+
+
+
+
+
+    <!-- ===============================================
+
+         COPY
+
+    ================================================ -->
+
+
 
     <div class="neo-hero-copy">
 
+
+
         <div class="neo-system-tag">
+
+
+
             <i></i>
 
+
+
             <span>
+
                 AUTHFORGE / NEO
+
             </span>
 
+
+
             <small>
+
                 SYSTEM 01
+
             </small>
+
+
+
         </div>
 
+
+
+
+
         <h1>
+
             Authentication
+
             <span>beyond the interface.</span>
+
         </h1>
 
+
+
+
+
         <p class="neo-hero-description">
+
             A next-generation authentication system shaped
+
             by parametric geometry, adaptive interfaces and
+
             precision interaction.
+
         </p>
+
+
+
+
 
         <div class="neo-hero-actions">
 
-            <a
-                href="https://kutnjak6.gumroad.com/l/sudfp/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="neo-primary-action"
-            >
-                <span>Get NEO — €19</span>
-                <strong>↗</strong>
-            </a>
+
 
             <a
-                href="#screens"
-                class="neo-secondary-action"
+
+                href="https://kutnjak6.gumroad.com/l/sudfp/" target="_blank" rel="noopener noreferrer"
+
+                class="neo-primary-action"
+
             >
-                View screens
+
+                <span>Get NEO — €19</span>
+
+
+
+                <strong>→</strong>
+
             </a>
+
+
+
+
+
+            <a
+
+                href="#screens"
+
+                class="neo-secondary-action"
+
+            >
+
+                View screens
+
+            </a>
+
+
 
         </div>
+
+
+
+
 
         <div class="neo-hero-meta">
 
+
+
             <div>
+
                 <span>01</span>
+
+
+
                 <p>
+
                     PURE
+
                     <strong>HTML</strong>
+
                 </p>
+
             </div>
 
+
+
             <div>
+
                 <span>02</span>
+
+
+
                 <p>
+
                     ZERO
+
                     <strong>DEPENDENCIES</strong>
+
                 </p>
+
             </div>
 
+
+
             <div>
+
                 <span>03</span>
+
+
+
                 <p>
+
                     FULLY
+
                     <strong>RESPONSIVE</strong>
+
                 </p>
+
             </div>
+
+
 
         </div>
+
+
 
     </div>
 
 
-    <!-- ORIGINAL NEO PARAMETRIC CORE -->
+
+
+
+
+
+    <!-- ===============================================
+
+         PARAMETRIC HERO
+
+    ================================================ -->
+
+
 
     <div class="neo-hero-architecture">
 
+
+
         <div class="neo-architecture-halo"></div>
 
+
+
+
+
+        <!-- RING 1 -->
+
+
+
         <div class="neo-architecture-ring neo-architecture-ring-1">
+
+
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
+
+
         </div>
+
+
+
+
+
+        <!-- RING 2 -->
+
+
 
         <div class="neo-architecture-ring neo-architecture-ring-2">
+
+
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
+
+
         </div>
+
+
+
+
+
+        <!-- RING 3 -->
+
+
 
         <div class="neo-architecture-ring neo-architecture-ring-3">
+
+
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
+
+
         </div>
 
+
+
+
+
+        <!-- RING 4 -->
+
+
+
         <div class="neo-architecture-ring neo-architecture-ring-4">
+
+
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
+
+
         </div>
+
+
+
+
+
+        <!-- CORE -->
+
+
 
         <div class="neo-hero-core">
 
+
+
             <div class="neo-hero-core-ring"></div>
 
+
+
             <div class="neo-hero-core-inner">
+
                 N
+
             </div>
 
+
+
         </div>
+
+
+
+
+
+        <!-- DATA -->
+
+
 
         <div class="neo-hero-data neo-hero-data-one">
+
+
+
             <i></i>
 
+
+
             <span>
+
                 AUTH CORE
+
             </span>
 
+
+
             <strong>
+
                 ONLINE
+
             </strong>
+
+
+
         </div>
+
+
+
+
 
         <div class="neo-hero-data neo-hero-data-two">
 
+
+
             <span>
+
                 ENCRYPTION
+
             </span>
 
+
+
             <strong>
+
                 256 / ACTIVE
+
             </strong>
 
+
+
         </div>
+
+
+
+
 
         <div class="neo-hero-data neo-hero-data-three">
 
+
+
             <span>
+
                 INTERFACE
+
             </span>
 
+
+
             <strong>
+
                 ADAPTIVE
+
             </strong>
 
+
+
         </div>
+
+
+
+
 
         <div class="neo-coordinate neo-coordinate-one">
+
             X / 042.86
+
         </div>
 
+
+
         <div class="neo-coordinate neo-coordinate-two">
+
             Y / 117.04
+
         </div>
+
+
 
     </div>
 
+
+
+
+
+
+
+    <!-- ===============================================
+
+         SIDE INDEX
+
+    ================================================ -->
+
+
+
+    <div class="neo-hero-index">
+
+
+
+        <span>
+
+            01
+
+        </span>
+
+
+
+        <div></div>
+
+
+
+        <small>
+
+            NEO
+
+        </small>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="neo-scroll-indicator">
+
+
+
+        <span>
+
+            SCROLL
+
+        </span>
+
+
+
+        <div></div>
+
+
+
+    </div>
+
+
+
 </section>
+
+
+
+
+
+
+
+<!-- =====================================================
+
+     SYSTEM STRIP
+
+\====================================================== -->
+
+
+
+<section class="neo-system-strip">
+
+
+
+    <div>
+
+
+
+        <span>
+
+            AUTHFORGE / NEO
+
+        </span>
+
+
+
+        <strong>
+
+            SYSTEM ONLINE
+
+        </strong>
+
+
+
+    </div>
+
+
+
+
+
+    <div>
+
+
+
+        <span>
+
+            SCREENS
+
+        </span>
+
+
+
+        <strong>
+
+            07
+
+        </strong>
+
+
+
+    </div>
+
+
+
+
+
+    <div>
+
+
+
+        <span>
+
+            COLOR MODES
+
+        </span>
+
+
+
+        <strong>
+
+            02
+
+        </strong>
+
+
+
+    </div>
+
+
+
+
+
+    <div>
+
+
+
+        <span>
+
+            ACCENTS
+
+        </span>
+
+
+
+        <strong>
+
+            05
+
+        </strong>
+
+
+
+    </div>
+
+
+
+
+
+    <div>
+
+
+
+        <span>
+
+            DEPENDENCIES
+
+        </span>
