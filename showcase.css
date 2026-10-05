@@ -1,0 +1,119 @@
+        padding:
+            75px 0;
+    }
+
+
+    .neo-system-diagram {
+        min-height: 430px;
+    }
+
+
+    .neo-screen-row {
+        grid-template-columns:
+            45px 1fr 30px;
+
+        padding:
+            0 10px;
+    }
+
+
+    .neo-screen-status {
+        display: none;
+    }
+
+
+    .neo-color-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .neo-color {
+        min-height: 85px;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        border-right: 0;
+
+        border-bottom:
+            1px solid rgba(255,255,255,.07);
+    }
+
+
+    .neo-footer {
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .neo-hero-actions {
+        flex-direction: column;
+    }
+
+
+    .neo-primary-action,
+    .neo-secondary-action {
+        width: 100%;
+    }
+
+
+    .neo-hero-architecture {
+        width: 115vw;
+
+        margin-left: -8vw;
+    }
+
+
+    .neo-hero-data {
+        transform: scale(.8);
+    }
+
+
+    .neo-system-diagram {
+        min-height: 380px;
+    }
+
+
+    .neo-diagram-node {
+        min-width: 85px;
+
+        font-size: 6px;
+    }
+
+
+    .neo-final-core {
+        width: 360px;
+        height: 360px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .neo-hero-architecture,
+    .neo-architecture-ring,
+    .neo-architecture-halo,
+    .neo-hero-core-ring,
+    .neo-hero-data,
+    .neo-scroll-indicator div,
+    .neo-diagram-lines line,
+    .neo-final-core {
+
+        animation:
+            none !important;
+    }
+
+}
