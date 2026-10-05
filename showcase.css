@@ -1,3 +1,5123 @@
+/* AuthForge NEO Showcase — public homepage only */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+
+:root {
+    --accent-50: #eef2ff;
+    --accent-100: #e0e7ff;
+    --accent-200: #c7d2fe;
+    --accent-300: #a5b4fc;
+    --accent-400: #818cf8;
+    --accent-500: #6366f1;
+    --accent-600: #4f46e5;
+    --accent-700: #4338ca;
+    --accent-rgb: 99, 102, 241;
+}
+
+/* =========================================================
+   AUTHFORGE NEO
+   Futuristic Interface System
+========================================================= */
+
+:root {
+    --neo-black: #050509;
+    --neo-black-2: #080810;
+    --neo-panel: rgba(12, 12, 22, .66);
+    --neo-panel-strong: rgba(15, 15, 28, .88);
+
+    --neo-white: #f7f7fb;
+    --neo-muted: #8b8ba3;
+
+    --neo-violet: #8b5cf6;
+    --neo-purple: #a855f7;
+    --neo-cyan: #22d3ee;
+
+    --neo-line: rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   ACCENTS
+========================================================= */
+
+:root,
+:root[data-accent="indigo"] {
+    --accent-400: #a78bfa;
+    --accent-500: #8b5cf6;
+    --accent-600: #7c3aed;
+    --accent-rgb: 139, 92, 246;
+
+    --neo-secondary: #22d3ee;
+    --neo-secondary-rgb: 34, 211, 238;
+}
+
+:root[data-accent="blue"] {
+    --accent-400: #67e8f9;
+    --accent-500: #22d3ee;
+    --accent-600: #0891b2;
+    --accent-rgb: 34, 211, 238;
+
+    --neo-secondary: #818cf8;
+    --neo-secondary-rgb: 129, 140, 248;
+}
+
+:root[data-accent="emerald"] {
+    --accent-400: #a3e635;
+    --accent-500: #84cc16;
+    --accent-600: #65a30d;
+    --accent-rgb: 132, 204, 22;
+
+    --neo-secondary: #22d3ee;
+    --neo-secondary-rgb: 34, 211, 238;
+}
+
+:root[data-accent="rose"] {
+    --accent-400: #f472b6;
+    --accent-500: #ec4899;
+    --accent-600: #db2777;
+    --accent-rgb: 236, 72, 153;
+
+    --neo-secondary: #a78bfa;
+    --neo-secondary-rgb: 167, 139, 250;
+}
+
+:root[data-accent="orange"] {
+    --accent-400: #fbbf24;
+    --accent-500: #f59e0b;
+    --accent-600: #d97706;
+    --accent-rgb: 245, 158, 11;
+
+    --neo-secondary: #fb7185;
+    --neo-secondary-rgb: 251, 113, 133;
+}
+
+
+/* =========================================================
+   DARK MODE — NEO'S NATIVE MODE
+========================================================= */
+
+:root[data-theme="dark"] {
+    --page-bg: #050509;
+    --surface: rgba(15,15,27,.72);
+    --surface-solid: #0d0d17;
+    --surface-soft: rgba(255,255,255,.035);
+    --surface-hover: rgba(255,255,255,.055);
+
+    --text-primary: #f7f7fb;
+    --text-secondary: #9999ae;
+    --text-muted: #66667a;
+
+    --border-soft: rgba(255,255,255,.075);
+    --border-medium: rgba(255,255,255,.13);
+}
+
+
+/* =========================================================
+   AUTH PAGE
+========================================================= */
+
+.auth-page {
+    position: relative;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(var(--accent-rgb), .20),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 78%,
+            rgba(var(--neo-secondary-rgb), .10),
+            transparent 30%
+        ),
+        #050509;
+}
+
+
+/* subtle ambient noise/grid */
+
+.auth-page::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.026) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.026) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    -webkit-mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 82%
+        );
+
+    mask-image:
+        radial-gradient(
+            circle at center,
+            black,
+            transparent 82%
+        );
+}
+
+
+/* =========================================================
+   LEFT VISUAL
+========================================================= */
+
+.auth-visual {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(var(--accent-rgb), .13),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #080810,
+            #050509
+        );
+
+    border-right:
+        1px solid rgba(255,255,255,.065);
+}
+
+
+/* HUGE HOLOGRAPHIC RING */
+
+.auth-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: 48%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(var(--accent-rgb), .20);
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 0 45%,
+            rgba(var(--accent-rgb), .035) 45.2% 45.5%,
+            transparent 46% 58%,
+            rgba(var(--neo-secondary-rgb), .045) 58.2% 58.5%,
+            transparent 59%
+        );
+
+    box-shadow:
+        0 0 100px rgba(var(--accent-rgb), .08),
+        inset 0 0 100px rgba(var(--accent-rgb), .035);
+
+    animation:
+        neoOrbit 30s linear infinite;
+}
+
+
+/* central energy */
+
+.auth-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: 50%;
+    top: 48%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08) 0%,
+            rgba(var(--accent-rgb), .14) 20%,
+            rgba(var(--accent-rgb), .05) 42%,
+            transparent 70%
+        );
+
+    filter: blur(4px);
+
+    animation:
+        neoCorePulse
+        5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   GRID BECOMES PERSPECTIVE GRID
+========================================================= */
+
+.visual-grid {
+    position: absolute;
+
+    width: 140%;
+    height: 75%;
+
+    left: -20%;
+    bottom: -38%;
+
+    top: auto;
+
+    opacity: .38;
+
+    background-image:
+        linear-gradient(
+            rgba(var(--accent-rgb), .16) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(var(--accent-rgb), .16) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    transform:
+        perspective(450px)
+        rotateX(63deg);
+
+    transform-origin:
+        center top;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
+}
+
+
+/* =========================================================
+   FLOATING SIGNALS
+========================================================= */
+
+.visual-orb {
+    z-index: 3;
+
+    border-radius: 50%;
+}
+
+
+.visual-orb-one {
+    width: 9px;
+    height: 9px;
+
+    background:
+        var(--accent-400);
+
+    box-shadow:
+        0 0 0 6px rgba(var(--accent-rgb), .06),
+        0 0 30px rgba(var(--accent-rgb), .9);
+
+    animation:
+        neoSatelliteOne
+        9s ease-in-out infinite;
+}
+
+
+.visual-orb-two {
+    width: 7px;
+    height: 7px;
+
+    background:
+        var(--neo-secondary);
+
+    box-shadow:
+        0 0 0 5px rgba(var(--neo-secondary-rgb), .06),
+        0 0 25px rgba(var(--neo-secondary-rgb), .8);
+
+    animation:
+        neoSatelliteTwo
+        11s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.visual-content {
+    z-index: 5;
+}
+
+
+.visual-content .brand {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    backdrop-filter:
+        blur(15px);
+
+    color:
+        rgba(255,255,255,.82);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .14em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.visual-content .brand::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        var(--accent-400);
+
+    box-shadow:
+        0 0 14px
+        rgba(var(--accent-rgb), .9);
+}
+
+
+.visual-content h1 {
+    max-width:
+        650px;
+
+    color:
+        #fafafa;
+
+    font-size:
+        clamp(56px, 5vw, 82px);
+
+    font-weight:
+        600;
+
+    line-height:
+        .94;
+
+    letter-spacing:
+        -.065em;
+}
+
+
+.visual-content h1 span {
+    display: block;
+
+    margin-top:
+        8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent-300, #c4b5fd),
+            var(--accent-500),
+            var(--neo-secondary),
+            #ffffff
+        );
+
+    background-size:
+        250% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+    animation:
+        neoGradientMove
+        7s linear infinite;
+}
+
+
+.visual-content p {
+    max-width:
+        510px;
+
+    color:
+        rgba(220,220,235,.52);
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   FORM SIDE
+========================================================= */
+
+.auth-form-section {
+    position: relative;
+
+    background:
+        transparent;
+}
+
+
+/* large light bloom */
+
+.auth-form-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent-rgb), .075),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+
+/* diagonal energy */
+
+.auth-form-section::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -50%;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 120px,
+            rgba(var(--accent-rgb), .025) 121px,
+            transparent 123px
+        );
+
+    animation:
+        neoLinesMove
+        18s linear infinite;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FORM BECOMES FLOATING GLASS PANEL
+========================================================= */
+
+.auth-form-container {
+    position: relative;
+
+    z-index: 5;
+
+    padding:
+        42px;
+
+    border:
+        1px solid rgba(255,255,255,.095);
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.018)
+        );
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.055);
+
+    backdrop-filter:
+        blur(28px);
+
+    -webkit-backdrop-filter:
+        blur(28px);
+}
+
+
+/* holographic top edge */
+
+.auth-form-container::before {
+    content: "";
+
+    position: absolute;
+
+    left: 35px;
+    right: 35px;
+    top: -1px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent-400),
+            var(--neo-secondary),
+            transparent
+        );
+
+    opacity:
+        .8;
+
+    box-shadow:
+        0 0 18px rgba(var(--accent-rgb), .55);
+}
+
+
+/* tiny system label */
+
+.auth-form-container::after {
+    content: "AUTH / SECURE SESSION";
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    color:
+        rgba(255,255,255,.25);
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .13em;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.auth-header {
+    margin-bottom:
+        34px;
+}
+
+
+.auth-header h1,
+.auth-header h2 {
+    color:
+        #f8f8fb;
+
+    font-size:
+        32px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -.045em;
+}
+
+
+.auth-header p {
+    color:
+        #8c8c9f;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.form-group label {
+    color:
+        rgba(230,230,240,.62);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .11em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-wrapper input {
+    min-height:
+        54px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        #f7f7fb;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.input-wrapper input::placeholder {
+    color:
+        rgba(200,200,215,.32);
+}
+
+
+.input-wrapper:hover input {
+    border-color:
+        rgba(var(--accent-rgb), .30);
+
+    background:
+        rgba(255,255,255,.045);
+}
+
+
+.input-wrapper:focus-within input {
+    border-color:
+        rgba(var(--accent-rgb), .70);
+
+    background:
+        rgba(var(--accent-rgb), .035);
+
+    box-shadow:
+        0 0 0 3px rgba(var(--accent-rgb), .07),
+        0 0 30px rgba(var(--accent-rgb), .08),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+
+.input-icon {
+    color:
+        #66667a;
+}
+
+
+.input-wrapper:focus-within
+.input-icon {
+    color:
+        var(--accent-400);
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(var(--accent-rgb), .5)
+        );
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.forgot-link,
+.auth-footer a,
+.link-button {
+    color:
+        var(--accent-400);
+
+    text-decoration:
+        none;
+}
+
+
+.forgot-link:hover,
+.auth-footer a:hover {
+    color:
+        var(--neo-secondary);
+}
+
+
+/* PRIMARY ACTION */
+
+.primary-button {
+    border-radius: 2px;
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - 14px) 0,
+        100% 14px,
+        100% 100%,
+        14px 100%,
+        0 calc(100% - 14px)
+    );
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent-600),
+            var(--accent-500) 60%,
+            var(--neo-secondary)
+        );
+
+    box-shadow:
+        0 0 35px rgba(var(--accent-rgb), .15);
+}
+
+.primary-button::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 100%;
+
+    left: -140px;
+    top: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.28),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left .55s ease;
+}
+
+
+.primary-button:hover {
+    transform:
+        translateY(-2px);
+
+    background-position:
+        100% 0;
+
+    box-shadow:
+        0 18px 50px
+        rgba(var(--accent-rgb), .27),
+        0 0 50px
+        rgba(var(--neo-secondary-rgb), .08);
+}
+
+
+.primary-button:hover::before {
+    left:
+        calc(100% + 40px);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider {
+    color:
+        #606071;
+
+    font-size:
+        11px;
+}
+
+
+.divider::before,
+.divider::after {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.10)
+        );
+}
+
+
+.divider::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.10),
+            transparent
+        );
+}
+
+
+/* SOCIAL */
+
+.social-button {
+    border-radius: 2px;
+
+    background:
+        rgba(255,255,255,.015);
+
+    clip-path: polygon(
+        0 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+.social-button:hover {
+    border-color:
+        rgba(var(--accent-rgb), .30);
+
+    background:
+        rgba(var(--accent-rgb), .045);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   OTP
+========================================================= */
+
+.otp-input {
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    color:
+        #fff;
+}
+
+
+.otp-input:focus {
+    border-color:
+        var(--accent-400);
+
+    background:
+        rgba(var(--accent-rgb), .05);
+
+    box-shadow:
+        0 0 0 3px rgba(var(--accent-rgb), .07),
+        0 0 25px rgba(var(--accent-rgb), .10);
+}
+
+
+.otp-input.is-filled {
+    border-color:
+        rgba(var(--accent-rgb), .5);
+
+    background:
+        rgba(var(--accent-rgb), .08);
+
+    color:
+        var(--accent-300, #c4b5fd);
+}
+
+
+/* =========================================================
+   STATUS / HINTS
+========================================================= */
+
+.security-hint,
+.status-note {
+    border:
+        1px solid
+        rgba(255,255,255,.075);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:
+        #88889a;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.checkbox-row input {
+    accent-color:
+        var(--accent-500);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes neoOrbit {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes neoCorePulse {
+
+    0%,
+    100% {
+        opacity:
+            .55;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.92);
+    }
+
+    50% {
+        opacity:
+            1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.12);
+    }
+
+}
+
+
+@keyframes neoGradientMove {
+
+    from {
+        background-position:
+            0% center;
+    }
+
+    to {
+        background-position:
+            250% center;
+    }
+
+}
+
+
+@keyframes neoSatelliteOne {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0);
+    }
+
+    50% {
+        transform:
+            translate(18px,-18px);
+    }
+
+}
+
+
+@keyframes neoSatelliteTwo {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0);
+    }
+
+    50% {
+        transform:
+            translate(-14px,20px);
+    }
+
+}
+
+
+@keyframes neoLinesMove {
+
+    from {
+        transform:
+            translate3d(0,0,0);
+    }
+
+    to {
+        transform:
+            translate3d(120px,120px,0);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .auth-visual::before {
+        width:
+            430px;
+
+        height:
+            430px;
+    }
+
+
+    .auth-visual::after {
+        width:
+            180px;
+
+        height:
+            180px;
+    }
+
+
+    .visual-content h1 {
+        font-size:
+            clamp(38px, 10vw, 55px);
+    }
+
+
+    .auth-form-container {
+        padding:
+            32px 25px;
+
+        border-radius:
+            18px;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .auth-form-container {
+        border:
+            1px solid
+            rgba(255,255,255,.07);
+
+        background:
+            rgba(10,10,18,.60);
+
+        box-shadow:
+            0 25px 70px
+            rgba(0,0,0,.25);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .auth-visual::before,
+    .auth-visual::after,
+    .visual-orb-one,
+    .visual-orb-two,
+    .visual-content h1 span,
+    .auth-form-section::after {
+        animation:
+            none;
+    }
+
+}
+
+/* =========================================================
+   NEO PARAMETRIC ARCHITECTURE
+========================================================= */
+
+.auth-visual {
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 52% 40%,
+            rgba(var(--accent-rgb), .08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(var(--neo-secondary-rgb), .055),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #06070c,
+            #030407 72%
+        );
+}
+
+
+/* Remove old giant circular effect */
+
+.auth-visual::before,
+.auth-visual::after {
+    display: none;
+}
+
+
+/* =========================================================
+   WHOLE ARCHITECTURAL OBJECT
+========================================================= */
+
+.neo-structure {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    perspective: 1000px;
+}
+
+
+/* =========================================================
+   TUNNEL
+========================================================= */
+
+.neo-tunnel {
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    left: 50%;
+    top: 43%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-8deg);
+
+    transform-style: preserve-3d;
+
+    animation:
+        neoTunnelFloat
+        10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   POLYGON RINGS
+========================================================= */
+
+.neo-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: var(--size);
+    height: var(--size);
+
+    transform:
+        translate(-50%, -50%)
+        rotate(var(--rotation));
+
+    transform-style: preserve-3d;
+
+    opacity: var(--opacity);
+}
+
+
+/* outer */
+
+.neo-ring-1 {
+    --size: 570px;
+    --rotation: 5deg;
+    --opacity: .34;
+
+    animation:
+        neoRingRotateOne
+        38s linear infinite;
+}
+
+
+.neo-ring-2 {
+    --size: 470px;
+    --rotation: -8deg;
+    --opacity: .42;
+
+    animation:
+        neoRingRotateTwo
+        31s linear infinite;
+}
+
+
+.neo-ring-3 {
+    --size: 370px;
+    --rotation: 12deg;
+    --opacity: .52;
+
+    animation:
+        neoRingRotateOne
+        25s linear infinite reverse;
+}
+
+
+.neo-ring-4 {
+    --size: 270px;
+    --rotation: -15deg;
+    --opacity: .68;
+
+    animation:
+        neoRingRotateTwo
+        20s linear infinite;
+}
+
+
+.neo-ring-5 {
+    --size: 175px;
+    --rotation: 10deg;
+    --opacity: .88;
+
+    animation:
+        neoRingRotateOne
+        15s linear infinite;
+}
+
+
+/* =========================================================
+   RING SEGMENTS
+========================================================= */
+
+.neo-ring span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 42%;
+    height: 1px;
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.28),
+            rgba(var(--accent-rgb), .55)
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(var(--accent-rgb), .08);
+}
+
+
+/*
+    Eight structural arms.
+    This produces the parametric / architectural skeleton.
+*/
+
+.neo-ring span:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.neo-ring span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.neo-ring span:nth-child(3) {
+    transform: rotate(90deg);
+}
+
+.neo-ring span:nth-child(4) {
+    transform: rotate(135deg);
+}
+
+.neo-ring span:nth-child(5) {
+    transform: rotate(180deg);
+}
+
+.neo-ring span:nth-child(6) {
+    transform: rotate(225deg);
+}
+
+.neo-ring span:nth-child(7) {
+    transform: rotate(270deg);
+}
+
+.neo-ring span:nth-child(8) {
+    transform: rotate(315deg);
+}
+
+
+/* endpoints */
+
+.neo-ring span::after {
+    content: "";
+
+    position: absolute;
+
+    right: -2px;
+    top: 50%;
+
+    width: 4px;
+    height: 4px;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+
+    background:
+        rgba(255,255,255,.5);
+
+    box-shadow:
+        0 0 8px
+        rgba(var(--accent-rgb), .4);
+}
+
+
+/* selected energy segments */
+
+.neo-ring-2 span:nth-child(2),
+.neo-ring-3 span:nth-child(5),
+.neo-ring-4 span:nth-child(1),
+.neo-ring-5 span:nth-child(7) {
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent-400),
+            var(--neo-secondary)
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(var(--accent-rgb), .5);
+
+    animation:
+        neoSegmentPulse
+        3.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   POLYGON CONNECTORS
+
+   Rings get an octagonal outline using clip-path.
+========================================================= */
+
+.neo-ring::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 4%;
+
+    clip-path:
+        polygon(
+            30% 0%,
+            70% 0%,
+            100% 30%,
+            100% 70%,
+            70% 100%,
+            30% 100%,
+            0% 70%,
+            0% 30%
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.15),
+            rgba(var(--accent-rgb), .38),
+            rgba(255,255,255,.07),
+            rgba(var(--neo-secondary-rgb), .25)
+        );
+
+    padding: 1px;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0)
+        content-box,
+        linear-gradient(#000 0 0);
+
+    -webkit-mask-composite:
+        xor;
+
+    mask-composite:
+        exclude;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(var(--accent-rgb), .12)
+        );
+}
+
+
+/* second internal polygon */
+
+.neo-ring::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 15%;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            88% 16%,
+            100% 50%,
+            84% 88%,
+            50% 100%,
+            12% 84%,
+            0% 50%,
+            16% 14%
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   CENTRAL PORTAL
+========================================================= */
+
+.neo-core {
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent-rgb), .15),
+            rgba(var(--accent-rgb), .04) 45%,
+            transparent 68%
+        );
+
+    box-shadow:
+        0 0 80px
+        rgba(var(--accent-rgb), .13);
+
+    animation:
+        neoCoreBreath
+        4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CORE ORBITS
+========================================================= */
+
+.neo-core-orbit {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .30);
+}
+
+
+.neo-core-orbit-1 {
+    animation:
+        neoCoreOrbitOne
+        8s linear infinite;
+}
+
+
+.neo-core-orbit-1::before,
+.neo-core-orbit-1::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--accent-400);
+
+    box-shadow:
+        0 0 14px
+        var(--accent-400);
+}
+
+
+.neo-core-orbit-1::before {
+    left: 50%;
+    top: -4px;
+}
+
+
+.neo-core-orbit-1::after {
+    left: 50%;
+    bottom: -4px;
+}
+
+
+.neo-core-orbit-2 {
+    inset: 17px;
+
+    border-color:
+        rgba(var(--neo-secondary-rgb), .24);
+
+    animation:
+        neoCoreOrbitTwo
+        6s linear infinite;
+}
+
+
+/* =========================================================
+   CORE CENTER
+========================================================= */
+
+.neo-core-center {
+    position: relative;
+
+    width: 82px;
+    height: 82px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .55);
+
+    border-radius:
+        24px;
+
+    transform:
+        rotate(45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(var(--accent-rgb), .14),
+            rgba(var(--neo-secondary-rgb), .055)
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(var(--accent-rgb), .20),
+        inset 0 0 25px
+        rgba(var(--accent-rgb), .07);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.neo-core-center::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        18px;
+}
+
+
+.neo-core-center span {
+    transform:
+        rotate(-45deg);
+
+    color:
+        #fff;
+
+    font-size:
+        35px;
+
+    font-weight:
+        600;
+
+    text-shadow:
+        0 0 20px
+        rgba(var(--accent-rgb), .8);
+}
+
+
+/* =========================================================
+   SCANNING ENERGY LINE
+========================================================= */
+
+.neo-scan {
+    position: absolute;
+
+    width: 70%;
+    height: 1px;
+
+    left: 15%;
+    top: 10%;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(var(--accent-rgb), .3),
+            var(--accent-400),
+            rgba(var(--neo-secondary-rgb), .35),
+            transparent
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(var(--accent-rgb), .45);
+
+    animation:
+        neoScan
+        7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   DATA LABELS
+========================================================= */
+
+.neo-data {
+    position: absolute;
+
+    z-index: 5;
+
+    display: grid;
+
+    grid-template-columns:
+        7px auto;
+
+    column-gap:
+        9px;
+
+    padding:
+        10px 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(7,8,14,.48);
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.16);
+
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+
+    animation:
+        neoDataFloat
+        6s ease-in-out infinite;
+}
+
+
+.neo-data i {
+    width: 6px;
+    height: 6px;
+
+    margin-top: 3px;
+
+    border-radius: 50%;
+
+    background:
+        var(--accent-400);
+
+    box-shadow:
+        0 0 10px
+        var(--accent-400);
+}
+
+
+.neo-data span {
+    color:
+        rgba(255,255,255,.38);
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .13em;
+}
+
+
+.neo-data strong {
+    grid-column:
+        2;
+
+    margin-top:
+        3px;
+
+    color:
+        rgba(255,255,255,.75);
+
+    font-size:
+        9px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.neo-data-one {
+    left: 8%;
+    top: 23%;
+}
+
+
+.neo-data-two {
+    right: 7%;
+    top: 30%;
+
+    animation-delay:
+        -2s;
+}
+
+
+.neo-data-three {
+    right: 10%;
+    top: 61%;
+
+    animation-delay:
+        -4s;
+}
+
+
+.neo-data-three i {
+    background:
+        #42f5b3;
+
+    box-shadow:
+        0 0 10px
+        rgba(66,245,179,.8);
+}
+
+
+/* =========================================================
+   CONTENT POSITIONING
+
+   Keep text below architectural structure.
+========================================================= */
+
+.visual-content {
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   SUBTLE BOTTOM ARCHITECTURAL FLOOR
+========================================================= */
+
+.visual-grid {
+    position: absolute;
+
+    z-index: 0;
+
+    width: 150%;
+    height: 55%;
+
+    left: -25%;
+    bottom: -35%;
+
+    top: auto;
+
+    opacity: .28;
+
+    background-image:
+        linear-gradient(
+            rgba(var(--accent-rgb), .16) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(var(--accent-rgb), .16) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        50px 50px;
+
+    transform:
+        perspective(400px)
+        rotateX(65deg);
+
+    transform-origin:
+        center top;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 88%
+        );
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes neoTunnelFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            rotate(-8deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            rotate(-5deg)
+            translateY(-10px);
+    }
+
+}
+
+
+@keyframes neoRingRotateOne {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes neoRingRotateTwo {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+
+@keyframes neoCoreOrbitOne {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes neoCoreOrbitTwo {
+
+    from {
+        transform:
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            rotate(0deg);
+    }
+
+}
+
+
+@keyframes neoCoreBreath {
+
+    0%,
+    100% {
+        filter:
+            brightness(.9);
+
+        transform:
+            translate(-50%, -50%)
+            scale(.97);
+    }
+
+    50% {
+        filter:
+            brightness(1.15);
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+    }
+
+}
+
+
+@keyframes neoSegmentPulse {
+
+    0%,
+    100% {
+        opacity:
+            .25;
+    }
+
+    50% {
+        opacity:
+            1;
+    }
+
+}
+
+
+@keyframes neoScan {
+
+    0% {
+        top: 12%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .65;
+    }
+
+    80% {
+        opacity: .4;
+    }
+
+    100% {
+        top: 82%;
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes neoDataFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .neo-tunnel {
+        width:
+            500px;
+
+        height:
+            500px;
+    }
+
+
+    .neo-ring-1 {
+        --size:
+            480px;
+    }
+
+    .neo-ring-2 {
+        --size:
+            395px;
+    }
+
+    .neo-ring-3 {
+        --size:
+            310px;
+    }
+
+    .neo-ring-4 {
+        --size:
+            225px;
+    }
+
+    .neo-ring-5 {
+        --size:
+            150px;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .neo-tunnel {
+        width:
+            390px;
+
+        height:
+            390px;
+
+        top:
+            47%;
+    }
+
+
+    .neo-ring-1 {
+        --size:
+            370px;
+    }
+
+    .neo-ring-2 {
+        --size:
+            305px;
+    }
+
+    .neo-ring-3 {
+        --size:
+            240px;
+    }
+
+    .neo-ring-4 {
+        --size:
+            175px;
+    }
+
+    .neo-ring-5 {
+        --size:
+            115px;
+    }
+
+
+    .neo-core {
+        width:
+            110px;
+
+        height:
+            110px;
+    }
+
+
+    .neo-core-center {
+        width:
+            58px;
+
+        height:
+            58px;
+
+        border-radius:
+            17px;
+    }
+
+
+    .neo-core-center span {
+        font-size:
+            25px;
+    }
+
+
+    .neo-data {
+        display:
+            none;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .neo-tunnel {
+        opacity:
+            .72;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.8)
+            rotate(-8deg);
+    }
+
+
+    .neo-scan {
+        display:
+            none;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .neo-tunnel,
+    .neo-ring,
+    .neo-core,
+    .neo-core-orbit,
+    .neo-scan,
+    .neo-data,
+    .neo-ring span {
+
+        animation:
+            none !important;
+    }
+
+}
+
+/* =========================================================
+   NEO HOMEPAGE
+========================================================= */
+
+.neo-home {
+    margin: 0;
+
+    background: #05060a;
+
+    color: #f7f7fa;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.neo-nav {
+    position: fixed;
+
+    z-index: 100;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 74px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 clamp(24px, 6vw, 100px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(5,6,10,.78);
+
+    backdrop-filter:
+        blur(22px);
+}
+
+
+.neo-nav::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 22%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(var(--accent-rgb), .8),
+            transparent
+        );
+}
+
+
+.neo-nav-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+.neo-nav-logo {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    position: relative;
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 10px) 0,
+            100% 10px,
+            100% 100%,
+            10px 100%,
+            0 calc(100% - 10px)
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent-500),
+            var(--neo-secondary)
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 0 25px
+        rgba(var(--accent-rgb), .25);
+}
+
+
+.neo-nav-brand > div {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 6px;
+}
+
+
+.neo-nav-brand strong {
+    font-size: 14px;
+}
+
+
+.neo-nav-brand div span {
+    color: var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .12em;
+}
+
+
+.neo-nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.neo-nav-links > a:not(.neo-nav-cta) {
+    color:
+        rgba(220,220,235,.52);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color .2s ease;
+}
+
+
+.neo-nav-links > a:hover {
+    color: #fff;
+}
+
+
+.neo-nav-cta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        11px 16px;
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .35);
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 9px) 0,
+            100% 9px,
+            100% 100%,
+            0 100%
+        );
+
+    background:
+        rgba(var(--accent-rgb), .07);
+
+    color:
+        var(--accent-400);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.neo-hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, .9fr)
+        minmax(500px, 1.1fr);
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding:
+        130px clamp(35px, 8vw, 150px)
+        80px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(var(--accent-rgb), .10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 5% 90%,
+            rgba(var(--neo-secondary-rgb), .05),
+            transparent 25%
+        ),
+        #05060a;
+}
+
+
+/* GRID */
+
+.neo-home-grid {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -5;
+
+    opacity: .38;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        72px 72px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center,
+            black,
+            transparent 90%
+        );
+}
+
+
+/* diagonal architectural beams */
+
+.neo-hero-beam {
+    position: absolute;
+
+    z-index: -4;
+
+    width: 1px;
+    height: 140%;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(var(--accent-rgb), .18),
+            transparent
+        );
+
+    transform:
+        rotate(38deg);
+}
+
+
+.neo-beam-one {
+    left: 34%;
+    top: -20%;
+}
+
+
+.neo-beam-two {
+    right: 8%;
+    top: -20%;
+
+    opacity: .4;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.neo-hero-copy {
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 700px;
+}
+
+
+.neo-system-tag {
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 34px;
+
+    padding:
+        8px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(255,255,255,.025);
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 8px) 0,
+            100% 8px,
+            100% 100%,
+            0 100%
+        );
+
+    font-family:
+        ui-monospace,
+        monospace;
+}
+
+
+.neo-system-tag i {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        var(--accent-400);
+
+    box-shadow:
+        0 0 12px
+        var(--accent-400);
+}
+
+
+.neo-system-tag span {
+    color:
+        var(--accent-400);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+}
+
+
+.neo-system-tag small {
+    padding-left: 10px;
+
+    border-left:
+        1px solid rgba(255,255,255,.1);
+
+    color:
+        rgba(255,255,255,.28);
+
+    font-size: 8px;
+
+    letter-spacing: .1em;
+}
+
+
+.neo-hero h1 {
+    margin: 0;
+
+    max-width: 760px;
+
+    font-size:
+        clamp(64px, 6.4vw, 118px);
+
+    line-height: .86;
+
+    letter-spacing: -.075em;
+
+    font-weight: 600;
+}
+
+
+.neo-hero h1 span {
+    display: block;
+
+    margin-top: 16px;
+
+    color: transparent;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent-400),
+            var(--accent-500),
+            var(--neo-secondary)
+        );
+
+    background-size:
+        200% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    animation:
+        neoHomeGradient
+        7s linear infinite;
+}
+
+
+.neo-hero-description {
+    max-width: 600px;
+
+    margin:
+        38px 0 0;
+
+    color:
+        rgba(215,215,230,.53);
+
+    font-size:
+        clamp(15px, 1.25vw, 19px);
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.neo-hero-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 38px;
+}
+
+
+.neo-primary-action,
+.neo-secondary-action {
+    min-height: 54px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+
+.neo-primary-action {
+    position: relative;
+
+    min-width: 180px;
+
+    justify-content:
+        space-between;
+
+    gap: 30px;
+
+    padding:
+        0 19px;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--accent-600),
+            var(--accent-500),
+            var(--neo-secondary)
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 13px) 0,
+            100% 13px,
+            100% 100%,
+            13px 100%,
+            0 calc(100% - 13px)
+        );
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 0 45px
+        rgba(var(--accent-rgb), .15);
+}
+
+
+.neo-primary-action::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 180%;
+
+    left: -100px;
+    top: -40%;
+
+    transform:
+        rotate(20deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.32),
+            transparent
+        );
+
+    transition:
+        left .55s ease;
+}
+
+
+.neo-primary-action:hover::before {
+    left: calc(100% + 40px);
+}
+
+
+.neo-primary-action strong {
+    font-size: 19px;
+
+    font-weight: 400;
+}
+
+
+.neo-secondary-action {
+    padding:
+        0 22px;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 10px) 0,
+            100% 10px,
+            100% 100%,
+            0 100%
+        );
+
+    color:
+        rgba(255,255,255,.75);
+
+    background:
+        rgba(255,255,255,.02);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HERO META
+========================================================= */
+
+.neo-hero-meta {
+    display: flex;
+
+    gap: 34px;
+
+    margin-top: 55px;
+}
+
+
+.neo-hero-meta > div {
+    display: flex;
+
+    gap: 9px;
+
+    align-items:
+        flex-start;
+}
+
+
+.neo-hero-meta span {
+    color:
+        var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+}
+
+
+.neo-hero-meta p {
+    margin: 0;
+
+    color:
+        rgba(255,255,255,.28);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+
+    letter-spacing: .08em;
+}
+
+
+.neo-hero-meta strong {
+    display: block;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PARAMETRIC ARCHITECTURE
+========================================================= */
+
+.neo-hero-architecture {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(48vw, 790px);
+
+    aspect-ratio: 1;
+
+    justify-self: center;
+
+    transform:
+        perspective(1000px)
+        rotateY(-7deg)
+        rotateX(4deg);
+
+    transform-style:
+        preserve-3d;
+
+    animation:
+        neoArchitectureFloat
+        10s ease-in-out infinite;
+}
+
+
+.neo-architecture-halo {
+    position: absolute;
+
+    inset: 12%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent-rgb), .16),
+            rgba(var(--accent-rgb), .035) 35%,
+            transparent 68%
+        );
+
+    filter: blur(10px);
+
+    animation:
+        neoHaloPulse
+        5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ARCHITECTURE RINGS
+========================================================= */
+
+.neo-architecture-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: var(--size);
+    height: var(--size);
+
+    transform:
+        translate(-50%, -50%);
+
+    clip-path:
+        polygon(
+            30% 0,
+            70% 0,
+            100% 30%,
+            100% 70%,
+            70% 100%,
+            30% 100%,
+            0 70%,
+            0 30%
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+}
+
+
+.neo-architecture-ring::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7%;
+
+    clip-path:
+        polygon(
+            50% 0,
+            85% 15%,
+            100% 50%,
+            85% 85%,
+            50% 100%,
+            15% 85%,
+            0 50%,
+            15% 15%
+        );
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .16);
+}
+
+
+.neo-architecture-ring-1 {
+    --size: 94%;
+
+    opacity: .30;
+
+    animation:
+        neoArchitectureRotate
+        65s linear infinite;
+}
+
+
+.neo-architecture-ring-2 {
+    --size: 73%;
+
+    opacity: .48;
+
+    animation:
+        neoArchitectureRotateReverse
+        50s linear infinite;
+}
+
+
+.neo-architecture-ring-3 {
+    --size: 52%;
+
+    opacity: .7;
+
+    animation:
+        neoArchitectureRotate
+        37s linear infinite;
+}
+
+
+.neo-architecture-ring-4 {
+    --size: 32%;
+
+    opacity: .95;
+
+    animation:
+        neoArchitectureRotateReverse
+        26s linear infinite;
+}
+
+
+/* radial architecture */
+
+.neo-architecture-ring span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 50%;
+    height: 1px;
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--accent-rgb), .45),
+            rgba(255,255,255,.13),
+            transparent
+        );
+}
+
+
+.neo-architecture-ring span::after {
+    content: "";
+
+    position: absolute;
+
+    right: 20%;
+
+    width: 4px;
+    height: 4px;
+
+    top: -2px;
+
+    transform:
+        rotate(45deg);
+
+    background:
+        rgba(255,255,255,.55);
+
+    box-shadow:
+        0 0 10px
+        rgba(var(--accent-rgb), .3);
+}
+
+
+.neo-architecture-ring span:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.neo-architecture-ring span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.neo-architecture-ring span:nth-child(3) {
+    transform: rotate(90deg);
+}
+
+.neo-architecture-ring span:nth-child(4) {
+    transform: rotate(135deg);
+}
+
+.neo-architecture-ring span:nth-child(5) {
+    transform: rotate(180deg);
+}
+
+.neo-architecture-ring span:nth-child(6) {
+    transform: rotate(225deg);
+}
+
+.neo-architecture-ring span:nth-child(7) {
+    transform: rotate(270deg);
+}
+
+.neo-architecture-ring span:nth-child(8) {
+    transform: rotate(315deg);
+}
+
+
+/* =========================================================
+   HERO CORE
+========================================================= */
+
+.neo-hero-core {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 180px;
+    height: 180px;
+
+    transform:
+        translate(-50%, -50%);
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(var(--accent-rgb), .22),
+            transparent 68%
+        );
+
+    box-shadow:
+        0 0 100px
+        rgba(var(--accent-rgb), .15);
+}
+
+
+.neo-hero-core-ring {
+    position: absolute;
+
+    inset: 0;
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .45);
+
+    border-radius: 50%;
+
+    animation:
+        neoArchitectureRotate
+        9s linear infinite;
+}
+
+
+.neo-hero-core-ring::before,
+.neo-hero-core-ring::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    left: 50%;
+
+    border-radius: 50%;
+
+    background:
+        var(--accent-400);
+
+    box-shadow:
+        0 0 16px
+        var(--accent-400);
+}
+
+
+.neo-hero-core-ring::before {
+    top: -4px;
+}
+
+
+.neo-hero-core-ring::after {
+    bottom: -4px;
+}
+
+
+.neo-hero-core-inner {
+    width: 92px;
+    height: 92px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .65);
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 50%,
+            50% 100%,
+            0 50%
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(var(--accent-rgb), .23),
+            rgba(var(--neo-secondary-rgb), .08)
+        );
+
+    color: white;
+
+    font-size: 36px;
+
+    font-weight: 500;
+
+    text-shadow:
+        0 0 20px
+        var(--accent-400);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+/* =========================================================
+   HERO TELEMETRY
+========================================================= */
+
+.neo-hero-data {
+    position: absolute;
+
+    min-width: 125px;
+
+    padding:
+        10px 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.075);
+
+    background:
+        rgba(6,7,12,.68);
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 8px) 0,
+            100% 8px,
+            100% 100%,
+            0 100%
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    animation:
+        neoTelemetryFloat
+        6s ease-in-out infinite;
+}
+
+
+.neo-hero-data span {
+    display: block;
+
+    color:
+        rgba(255,255,255,.3);
+
+    font-size: 7px;
+
+    letter-spacing: .12em;
+}
+
+
+.neo-hero-data strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+}
+
+
+.neo-hero-data i {
+    display: inline-block;
+
+    width: 5px;
+    height: 5px;
+
+    margin-right: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #42f5b3;
+
+    box-shadow:
+        0 0 10px
+        #42f5b3;
+}
+
+
+.neo-hero-data-one {
+    left: 5%;
+    top: 22%;
+}
+
+
+.neo-hero-data-two {
+    right: 1%;
+    top: 32%;
+
+    animation-delay: -2s;
+}
+
+
+.neo-hero-data-three {
+    right: 9%;
+    bottom: 20%;
+
+    animation-delay: -4s;
+}
+
+
+.neo-coordinate {
+    position: absolute;
+
+    color:
+        rgba(255,255,255,.19);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .15em;
+}
+
+
+.neo-coordinate-one {
+    left: 15%;
+    bottom: 18%;
+}
+
+
+.neo-coordinate-two {
+    right: 18%;
+    top: 14%;
+}
+
+
+/* =========================================================
+   HERO INDEX
+========================================================= */
+
+.neo-hero-index {
+    position: absolute;
+
+    right: 35px;
+    top: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    transform:
+        translateY(-50%);
+}
+
+
+.neo-hero-index span {
+    color:
+        var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 9px;
+}
+
+
+.neo-hero-index div {
+    width: 1px;
+    height: 80px;
+
+    background:
+        linear-gradient(
+            var(--accent-400),
+            rgba(255,255,255,.05)
+        );
+}
+
+
+.neo-hero-index small {
+    color:
+        rgba(255,255,255,.25);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 7px;
+
+    writing-mode:
+        vertical-rl;
+
+    letter-spacing: .2em;
+}
+
+
+.neo-scroll-indicator {
+    position: absolute;
+
+    left: 50%;
+    bottom: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+
+    transform:
+        translateX(-50%);
+}
+
+
+.neo-scroll-indicator span {
+    color:
+        rgba(255,255,255,.22);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .2em;
+}
+
+
+.neo-scroll-indicator div {
+    width: 1px;
+    height: 28px;
+
+    background:
+        linear-gradient(
+            var(--accent-400),
+            transparent
+        );
+
+    animation:
+        neoScroll
+        2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SYSTEM STRIP
+========================================================= */
+
+.neo-system-strip {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr repeat(4, 1fr);
+
+    min-height: 100px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        #07080d;
+}
+
+
+.neo-system-strip > div {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding:
+        20px clamp(20px, 3vw, 45px);
+
+    border-right:
+        1px solid rgba(255,255,255,.06);
+}
+
+
+.neo-system-strip span {
+    color:
+        rgba(255,255,255,.26);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .15em;
+}
+
+
+.neo-system-strip strong {
+    color:
+        rgba(255,255,255,.75);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 11px;
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   GENERIC SECTIONS
+========================================================= */
+
+.neo-section {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        100px 1fr;
+
+    min-height: 800px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.065);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--accent-rgb), .018),
+            transparent 25%
+        ),
+        #05060a;
+}
+
+
+.neo-section-index {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding-top: 100px;
+
+    border-right:
+        1px solid rgba(255,255,255,.06);
+}
+
+
+.neo-section-index span {
+    color:
+        var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 10px;
+}
+
+
+.neo-section-index div {
+    width: 1px;
+    height: 80px;
+
+    margin:
+        16px 0;
+
+    background:
+        linear-gradient(
+            rgba(var(--accent-rgb), .65),
+            rgba(255,255,255,.04)
+        );
+}
+
+
+.neo-section-index small {
+    color:
+        rgba(255,255,255,.20);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 7px;
+
+    writing-mode:
+        vertical-rl;
+
+    letter-spacing: .2em;
+}
+
+
+.neo-section-content {
+    width:
+        min(1320px, calc(100% - 80px));
+
+    margin:
+        0 auto;
+
+    padding:
+        100px 0;
+}
+
+
+.neo-section-kicker,
+.neo-mini-label {
+    color:
+        var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .16em;
+}
+
+
+.neo-section-header h2 {
+    max-width: 950px;
+
+    margin:
+        20px 0 70px;
+
+    font-size:
+        clamp(45px, 5vw, 82px);
+
+    line-height: .98;
+
+    letter-spacing: -.055em;
+
+    font-weight: 500;
+}
+
+
+.neo-section-header h2 span {
+    display: block;
+
+    color:
+        rgba(255,255,255,.30);
+}
+
+
+/* =========================================================
+   SYSTEM MAP
+========================================================= */
+
+.neo-system-map {
+    display: grid;
+
+    grid-template-columns:
+        300px 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.neo-system-description > p {
+    margin:
+        0 0 45px;
+
+    color:
+        rgba(215,215,230,.48);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.neo-system-spec {
+    padding:
+        17px 0;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+}
+
+
+.neo-system-spec span,
+.neo-system-spec strong {
+    display: block;
+
+    font-family:
+        ui-monospace,
+        monospace;
+}
+
+
+.neo-system-spec span {
+    color:
+        rgba(255,255,255,.22);
+
+    font-size: 7px;
+
+    letter-spacing: .14em;
+}
+
+
+.neo-system-spec strong {
+    margin-top: 6px;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+}
+
+
+.neo-system-diagram {
+    position: relative;
+
+    min-height: 520px;
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 30px) 0,
+            100% 30px,
+            100% 100%,
+            30px 100%,
+            0 calc(100% - 30px)
+        );
+}
+
+
+.neo-diagram-center {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+    top: 50%;
+
+    width: 90px;
+    height: 90px;
+
+    display: grid;
+
+    place-items: center;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
+    border:
+        1px solid var(--accent-500);
+
+    background:
+        rgba(var(--accent-rgb), .12);
+
+    color: white;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 50px
+        rgba(var(--accent-rgb), .15);
+}
+
+
+.neo-diagram-center::first-letter {
+    transform:
+        rotate(-45deg);
+}
+
+
+.neo-diagram-node {
+    position: absolute;
+
+    z-index: 4;
+
+    min-width: 110px;
+
+    padding:
+        11px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(8,9,15,.85);
+
+    color:
+        rgba(255,255,255,.67);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .08em;
+}
+
+
+.neo-diagram-node span {
+    margin-right: 7px;
+
+    color:
+        var(--accent-400);
+}
+
+
+.neo-node-login {
+    left: 7%;
+    top: 17%;
+}
+
+.neo-node-register {
+    right: 7%;
+    top: 13%;
+}
+
+.neo-node-recovery {
+    left: 4%;
+    top: 54%;
+}
+
+.neo-node-verify {
+    right: 4%;
+    top: 51%;
+}
+
+.neo-node-otp {
+    left: 17%;
+    bottom: 8%;
+}
+
+.neo-node-status {
+    right: 16%;
+    bottom: 9%;
+}
+
+
+.neo-diagram-lines {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.neo-diagram-lines line {
+    stroke:
+        rgba(var(--accent-rgb), .22);
+
+    stroke-width: 1;
+
+    stroke-dasharray:
+        5 7;
+
+    animation:
+        neoDash
+        15s linear infinite;
+}
+
+
+/* =========================================================
+   SCREEN LIST
+========================================================= */
+
+.neo-screen-list {
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+
+.neo-screen-row {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr 100px 40px;
+
+    align-items: center;
+
+    min-height: 115px;
+
+    padding:
+        0 25px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    color: inherit;
+
+    text-decoration: none;
+
+    overflow: hidden;
+
+    transition:
+        padding .3s ease,
+        background .3s ease;
+}
+
+
+.neo-screen-row::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        var(--accent-500);
+
+    transform:
+        scaleY(0);
+
+    transition:
+        transform .3s ease;
+
+    box-shadow:
+        0 0 15px
+        var(--accent-500);
+}
+
+
+.neo-screen-row:hover {
+    padding-left: 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--accent-rgb), .075),
+            transparent 60%
+        );
+}
+
+
+.neo-screen-row:hover::before {
+    transform:
+        scaleY(1);
+}
+
+
+.neo-screen-number {
+    color:
+        var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 9px;
+}
+
+
+.neo-screen-row h3 {
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    letter-spacing: -.025em;
+}
+
+
+.neo-screen-row p {
+    margin:
+        7px 0 0;
+
+    color:
+        rgba(255,255,255,.28);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .08em;
+}
+
+
+.neo-screen-status {
+    color:
+        #42f5b3;
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .12em;
+}
+
+
+.neo-screen-status::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 5px;
+    height: 5px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background:
+        #42f5b3;
+
+    box-shadow:
+        0 0 9px #42f5b3;
+}
+
+
+.neo-screen-row > strong {
+    color:
+        rgba(255,255,255,.35);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   ADAPTIVE SYSTEM
+========================================================= */
+
+.neo-adaptive-layout {
+    display: grid;
+
+    grid-template-columns:
+        1fr 340px;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.neo-color-row {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    margin-top: 20px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+}
+
+
+.neo-color {
+    position: relative;
+
+    min-height: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content:
+        space-between;
+
+    padding: 18px;
+
+    border: 0;
+
+    border-right:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.015);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease;
+}
+
+
+.neo-color:last-child {
+    border-right: 0;
+}
+
+
+.neo-color:hover {
+    background:
+        rgba(255,255,255,.04);
+}
+
+
+.neo-color i {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+
+.neo-color span,
+.neo-color small {
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .1em;
+}
+
+
+.neo-color small {
+    color:
+        rgba(255,255,255,.25);
+}
+
+
+.neo-color-indigo i {
+    background: #8b5cf6;
+    box-shadow: 0 0 20px #8b5cf6;
+}
+
+.neo-color-blue i {
+    background: #22d3ee;
+    box-shadow: 0 0 20px #22d3ee;
+}
+
+.neo-color-emerald i {
+    background: #84cc16;
+    box-shadow: 0 0 20px #84cc16;
+}
+
+.neo-color-rose i {
+    background: #ec4899;
+    box-shadow: 0 0 20px #ec4899;
+}
+
+.neo-color-orange i {
+    background: #f59e0b;
+    box-shadow: 0 0 20px #f59e0b;
+}
+
+
+.neo-mode-display {
+    padding: 35px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 25px) 0,
+            100% 25px,
+            100% 100%,
+            25px 100%,
+            0 calc(100% - 25px)
+        );
+
+    background:
+        rgba(255,255,255,.018);
+}
+
+
+.neo-mode-display > div:not(.neo-mode-line) {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.neo-mode-display span {
+    color:
+        rgba(255,255,255,.28);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+}
+
+
+.neo-mode-display strong {
+    font-size: 30px;
+
+    font-weight: 500;
+}
+
+
+.neo-mode-line {
+    height: 1px;
+
+    margin:
+        28px 0;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+.neo-mode-line i {
+    display: block;
+
+    width: 35%;
+    height: 1px;
+
+    background:
+        var(--accent-500);
+
+    box-shadow:
+        0 0 10px
+        var(--accent-500);
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+========================================================= */
+
+.neo-tech-section {
+    min-height: 700px;
+}
+
+
+.neo-tech-map {
+    display: grid;
+
+    grid-template-columns:
+        1fr 100px 1fr 100px 1fr;
+
+    align-items: center;
+}
+
+
+.neo-tech-node {
+    min-height: 220px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content:
+        space-between;
+
+    padding: 25px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    clip-path:
+        polygon(
+            0 0,
+            calc(100% - 20px) 0,
+            100% 20px,
+            100% 100%,
+            20px 100%,
+            0 calc(100% - 20px)
+        );
+
+    background:
+        rgba(255,255,255,.015);
+}
+
+
+.neo-tech-node > span {
+    color:
+        var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+}
+
+
+.neo-tech-node strong {
+    font-size:
+        clamp(40px, 4vw, 65px);
+
+    font-weight: 500;
+
+    letter-spacing: -.05em;
+}
+
+
+.neo-tech-node small {
+    color:
+        rgba(255,255,255,.25);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .15em;
+}
+
+
+.neo-tech-connector {
+    height: 1px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+.neo-tech-connector i {
+    display: block;
+
+    width: 8px;
+    height: 8px;
+
+    margin:
+        -4px auto 0;
+
+    transform:
+        rotate(45deg);
+
+    background:
+        var(--accent-500);
+
+    box-shadow:
+        0 0 15px
+        var(--accent-500);
+}
+
+
+.neo-zero {
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content:
+        flex-end;
+
+    gap: 25px;
+
+    margin-top: 50px;
+}
+
+
+.neo-zero span {
+    color:
+        rgba(255,255,255,.25);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .15em;
+}
+
+
+.neo-zero strong {
+    color:
+        var(--accent-400);
+
+    font-size: 70px;
+
+    font-weight: 300;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.neo-final {
+    position: relative;
+
+    min-height: 680px;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(var(--accent-rgb), .12),
+            transparent 40%
+        ),
+        #05060a;
+}
+
+
+.neo-final-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .25;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        60px 60px;
+}
+
+
+.neo-final-core {
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .16);
+
+    border-radius: 50%;
+
+    animation:
+        neoArchitectureRotate
+        40s linear infinite;
+}
+
+
+.neo-final-core::before,
+.neo-final-core::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(var(--accent-rgb), .10);
+}
+
+
+.neo-final-core::before {
+    inset: 70px;
+}
+
+
+.neo-final-core::after {
+    inset: 135px;
+}
+
+
+.neo-final-core div {
+    position: absolute;
+
+    width: 70%;
+    height: 70%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.05);
+
+    transform:
+        rotate(45deg);
+}
+
+
+.neo-final-core span {
+    color:
+        rgba(var(--accent-rgb), .18);
+
+    font-size: 150px;
+
+    font-weight: 300;
+}
+
+
+.neo-final-content {
+    position: relative;
+
+    z-index: 4;
+}
+
+
+.neo-final-content > span {
+    color:
+        var(--accent-400);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .18em;
+}
+
+
+.neo-final h2 {
+    margin:
+        20px 0 0;
+
+    font-size:
+        clamp(60px, 7vw, 105px);
+
+    line-height: .9;
+
+    letter-spacing: -.07em;
+
+    font-weight: 500;
+}
+
+
+.neo-final h2 strong {
+    display: block;
+
+    color:
+        var(--accent-400);
+
+    font-weight: inherit;
+}
+
+
+.neo-final p {
+    margin:
+        28px 0;
+
+    color:
+        rgba(255,255,255,.38);
+}
+
+
+.neo-final .neo-primary-action {
+    margin:
+        0 auto;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.neo-footer {
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 clamp(30px, 7vw, 120px);
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        #040509;
+
+    color:
+        rgba(255,255,255,.32);
+
+    font-family:
+        ui-monospace,
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .1em;
+}
+
+
+.neo-footer strong {
+    color:
+        rgba(255,255,255,.75);
+}
+
+
+.neo-footer div span {
+    color:
+        var(--accent-400);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes neoHomeGradient {
+
+    from {
+        background-position:
+            0% center;
+    }
+
+    to {
+        background-position:
+            200% center;
+    }
+
+}
+
+
+@keyframes neoArchitectureFloat {
+
+    0%,
+    100% {
+        transform:
+            perspective(1000px)
+            rotateY(-7deg)
+            rotateX(4deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            perspective(1000px)
+            rotateY(-3deg)
+            rotateX(1deg)
+            translateY(-15px);
+    }
+
+}
+
+
+@keyframes neoArchitectureRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes neoArchitectureRotateReverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+
+@keyframes neoHaloPulse {
+
+    0%,
+    100% {
+        opacity: .55;
+        transform: scale(.95);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.07);
+    }
+
+}
+
+
+@keyframes neoTelemetryFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
+
+
+@keyframes neoDash {
+
+    to {
+        stroke-dashoffset: -200;
+    }
+
+}
+
+
+@keyframes neoScroll {
+
+    0%,
+    100% {
+        transform: scaleY(.3);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+}
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+:root[data-theme="light"] .neo-home {
+    background:
+        #edf2f5;
+
+    color:
+        #11131a;
+}
+
+
+:root[data-theme="light"] .neo-nav {
+    background:
+        rgba(244,247,249,.80);
+
+    border-color:
+        rgba(10,15,25,.09);
+}
+
+
+:root[data-theme="light"] .neo-hero,
+:root[data-theme="light"] .neo-section,
+:root[data-theme="light"] .neo-final {
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(var(--accent-rgb), .10),
+            transparent 32%
+        ),
+        #edf2f5;
+}
+
+
+:root[data-theme="light"] .neo-system-strip {
+    background:
+        #e6ecef;
+}
+
+
+:root[data-theme="light"] .neo-home-grid {
+    background-image:
+        linear-gradient(
+            rgba(10,20,30,.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(10,20,30,.055) 1px,
+            transparent 1px
+        );
+}
+
+
+:root[data-theme="light"] .neo-hero-description,
+:root[data-theme="light"] .neo-section-header h2 span,
+:root[data-theme="light"] .neo-system-description > p {
+    color:
+        rgba(20,25,35,.53);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .neo-hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 140px;
+    }
+
+
+    .neo-hero-copy {
+        max-width: 800px;
+    }
+
+
+    .neo-hero-architecture {
+        width:
+            min(85vw, 680px);
+
+        margin-top:
+            -50px;
+    }
+
+
+    .neo-system-map,
+    .neo-adaptive-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .neo-tech-map {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .neo-tech-connector {
+        width: 1px;
+        height: 50px;
+
+        margin:
+            0 auto;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .neo-nav {
+        padding:
+            0 20px;
+    }
+
+
+    .neo-nav-links > a:not(.neo-nav-cta),
+    .neo-nav .theme-controls {
+        display: none;
+    }
+
+
+    .neo-hero {
+        padding:
+            120px 25px 70px;
+    }
+
+
+    .neo-hero h1 {
+        font-size:
+            clamp(55px, 15vw, 85px);
+    }
+
+
+    .neo-hero-meta {
+        flex-wrap: wrap;
+    }
+
+
+    .neo-hero-index {
+        display: none;
+    }
+
+
+    .neo-system-strip {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .neo-system-strip > div:first-child {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .neo-section {
+        display: block;
+    }
+
+
+    .neo-section-index {
+        display: none;
+    }
+
+
+    .neo-section-content {
+        width:
+            calc(100% - 40px);
+
         padding:
             75px 0;
     }
